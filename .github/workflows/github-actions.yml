@@ -1,0 +1,23 @@
+name: Qt builder Docker images
+
+  push:
+    paths:
+      - 'build/linux/Dockerfile'
+  pull_request:
+    paths:
+      - 'build/linux/Dockerfile'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-builder-linux-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      uses: VaultVulp/gp-docker-action@1.1.8
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        image-name: littlenavmap-builder-linux
+        image-tag: latest
+        dockerfile: build/linux/Dockerfile
