@@ -1,5 +1,6 @@
 name: Qt builder Docker images
 
+on:
   push:
     paths:
       - 'build/linux/Dockerfile'
