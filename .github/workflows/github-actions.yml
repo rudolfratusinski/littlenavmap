@@ -1,12 +1,13 @@
 name: Qt builder Docker images
 
-on:
-  push:
-    paths:
-      - 'build/linux/Dockerfile'
-  pull_request:
-    paths:
-      - 'build/linux/Dockerfile'
+on: [push, pull_request]
+  # on:
+  # push:
+  #   paths:
+  #     - 'build/linux/Dockerfile'
+  # pull_request:
+  #   paths:
+  #     - 'build/linux/Dockerfile'
 
 env:
   REGISTRY: ghcr.io
